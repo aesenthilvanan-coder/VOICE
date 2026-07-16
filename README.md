@@ -1,16 +1,33 @@
-# React + Vite
+# VOICE
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Vegans Organizing for Informed Conversation & Ethics.
 
-Currently, two official plugins are available:
+Public site for VOICE — a public debate-booth format asking passersby to defend or
+reconsider eating animals. Built with React (Vite), Tailwind CSS, and Framer Motion.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Development
 
-## React Compiler
+```bash
+npm install
+npm run dev
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Editable content
 
-## Expanding the Oxlint configuration
+Copy, image paths, and colors are kept as constants near the top of each
+component/page file in `src/`:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- Brand colors and fonts: `src/index.css` (`@theme` block)
+- Hero headline: `src/components/Hero.jsx`
+- Gallery captions/images: `src/components/Gallery.jsx` (`/public/images/gallery-1.jpg` … `gallery-8.jpg`)
+- Founder info: `src/pages/Contact.jsx`
+- Stats: `src/pages/Home.jsx`, `src/pages/About.jsx`
+
+Real photos should replace the placeholder images in `public/images/` (hero-booth.jpg,
+gallery-1..8.jpg, booth-1..3.jpg, logo.png, founder-aaryan.jpg, founder-mason.jpg).
+
+## Build
+
+```bash
+npm run build
+```
