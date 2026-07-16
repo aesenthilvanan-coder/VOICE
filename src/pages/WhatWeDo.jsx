@@ -1,5 +1,5 @@
-import { useRef } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { useRef, useState } from 'react'
+import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import Highlight from '../components/Highlight'
 import BoothSVG from '../components/BoothSVG'
@@ -12,53 +12,50 @@ const PROMPTS = [
   '"Ask Us Anything About Factory Farming"',
 ]
 
+const BOOTH_IMAGES = ['/images/booth-1.jpg', '/images/booth-2.jpg', '/images/booth-3.jpg']
+
 function PinnedReveal() {
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end end'] })
+  const [activeIndex, setActiveIndex] = useState(0)
 
-  const img1Opacity = useTransform(scrollYProgress, [0, 0.2, 0.35], [1, 1, 0])
-  const img2Opacity = useTransform(scrollYProgress, [0.3, 0.45, 0.65], [0, 1, 0])
-  const img3Opacity = useTransform(scrollYProgress, [0.6, 0.75, 1], [0, 1, 1])
-
-  const captions = [
-    { opacity: img1Opacity, text: PROMPTS[0] },
-    { opacity: img2Opacity, text: PROMPTS[1] },
-    { opacity: img3Opacity, text: PROMPTS[2] },
-  ]
+  // Only one caption/image is ever mounted at a time (via AnimatePresence),
+  // so they can't visually overlap regardless of scroll speed or timing.
+  useMotionValueEvent(scrollYProgress, 'change', (v) => {
+    const next = v < 1 / 3 ? 0 : v < 2 / 3 ? 1 : 2
+    setActiveIndex((prev) => (prev === next ? prev : next))
+  })
 
   return (
     <section ref={ref} className="relative h-[300vh] bg-voice-black">
       <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
-        <motion.img
-          style={{ opacity: img1Opacity }}
-          src="/images/booth-1.jpg"
-          alt="Debate booth prompt sign 1"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <motion.img
-          style={{ opacity: img2Opacity }}
-          src="/images/booth-2.jpg"
-          alt="Debate booth prompt sign 2"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <motion.img
-          style={{ opacity: img3Opacity }}
-          src="/images/booth-3.jpg"
-          alt="Debate booth prompt sign 3"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.img
+            key={BOOTH_IMAGES[activeIndex]}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            src={BOOTH_IMAGES[activeIndex]}
+            alt={`Debate booth prompt sign ${activeIndex + 1}`}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </AnimatePresence>
         <div className="absolute inset-0 bg-voice-black/50" />
 
-        <div className="relative z-10 text-center px-6">
-          {captions.map((c) => (
+        <div className="absolute inset-0 z-10 flex items-center justify-center px-6">
+          <AnimatePresence mode="wait" initial={false}>
             <motion.h3
-              key={c.text}
-              style={{ opacity: c.opacity }}
-              className="absolute inset-0 flex items-center justify-center font-display uppercase text-3xl md:text-6xl text-voice-cream max-w-4xl mx-auto px-6"
+              key={PROMPTS[activeIndex]}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.4 }}
+              className="text-center font-display uppercase text-3xl md:text-6xl text-voice-cream max-w-4xl mx-auto"
             >
-              {c.text}
+              {PROMPTS[activeIndex]}
             </motion.h3>
-          ))}
+          </AnimatePresence>
         </div>
       </div>
     </section>
