@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand: deep saturated green anchor, black + gold used sparingly */
+  --color-voice-green: #0f3d2e;
+  --color-voice-green-dark: #0a2b21;
+  --color-voice-black: #0a0a0a;
+  --color-voice-ink: #141414;
+  --color-voice-gold: #c9a961;
+  --color-voice-gold-dim: #8a7440;
+  --color-voice-cream: #f2efe9;
+
+  --font-display: "Oswald", "Arial Narrow", sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-voice-black);
+  color: var(--color-voice-cream);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-voice-gold);
+  color: var(--color-voice-black);
+}
+
+/* Subtle film-grain texture used as a fixed atmospheric overlay */
+.grain-overlay {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.text-outline-gold {
+  -webkit-text-stroke: 1px var(--color-voice-gold);
+  color: transparent;
+}
+
+/* Thin gold divider used sparingly per brand rules */
+.gold-rule {
+  height: 1px;
+  background: var(--color-voice-gold);
+  opacity: 0.6;
+}
