@@ -123,6 +123,11 @@ export default function About() {
           transition={{ duration: 0.7 }}
           className="mx-auto max-w-2xl"
         >
+          <img
+            src="/images/logo-mark.png"
+            alt="VOICE"
+            className="w-12 h-12 mx-auto mb-6 opacity-90"
+          />
           <span className="font-display uppercase tracking-[0.3em] text-voice-gold text-xs block text-center mb-6">
             A Note From Us
           </span>

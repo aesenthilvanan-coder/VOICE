@@ -73,6 +73,15 @@ export default function Hero() {
           className="w-px h-8 bg-voice-gold"
         />
       </motion.div>
+
+      <motion.img
+        src="/images/logo-mark.png"
+        alt=""
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.9 }}
+        transition={{ delay: 1, duration: 0.6 }}
+        className="absolute bottom-8 right-6 md:right-10 z-10 w-10 h-10 md:w-14 md:h-14"
+      />
     </section>
   )
 }
