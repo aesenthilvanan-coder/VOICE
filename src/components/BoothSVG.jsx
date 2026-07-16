@@ -14,7 +14,7 @@ const draw = {
 export default function BoothSVG() {
   return (
     <motion.svg
-      viewBox="0 0 400 260"
+      viewBox="0 0 400 280"
       className="w-full max-w-xl mx-auto"
       initial="hidden"
       whileInView="show"
@@ -89,15 +89,15 @@ export default function BoothSVG() {
         custom={0.5}
       />
 
-      {/* Two figures */}
-      <motion.circle cx="140" cy="200" r="14" fill="none" stroke="#f2efe9" strokeWidth="2.5" variants={draw} custom={0.6} />
-      <motion.line x1="140" y1="214" x2="140" y2="250" stroke="#f2efe9" strokeWidth="2.5" variants={draw} custom={0.7} />
-      <motion.circle cx="260" cy="200" r="14" fill="none" stroke="#f2efe9" strokeWidth="2.5" variants={draw} custom={0.6} />
-      <motion.line x1="260" y1="214" x2="260" y2="250" stroke="#f2efe9" strokeWidth="2.5" variants={draw} custom={0.7} />
+      {/* Two figures, positioned below the table line with clear headroom for bubbles */}
+      <motion.circle cx="140" cy="225" r="15" fill="none" stroke="#f2efe9" strokeWidth="2.5" variants={draw} custom={0.6} />
+      <motion.line x1="140" y1="240" x2="140" y2="270" stroke="#f2efe9" strokeWidth="2.5" variants={draw} custom={0.7} />
+      <motion.circle cx="260" cy="225" r="15" fill="none" stroke="#f2efe9" strokeWidth="2.5" variants={draw} custom={0.6} />
+      <motion.line x1="260" y1="240" x2="260" y2="270" stroke="#f2efe9" strokeWidth="2.5" variants={draw} custom={0.7} />
 
-      {/* Speech bubbles = the conversation */}
+      {/* Speech bubbles = the conversation, tails point down at each head with a clean gap */}
       <motion.path
-        d="M115 155 h50 v25 h-25 l-10 10 v-10 h-15 z"
+        d="M100 150 h80 v30 h-30 l-10 18 l-10 -18 h-30 z"
         fill="none"
         stroke="#c9a961"
         strokeWidth="2"
@@ -105,7 +105,7 @@ export default function BoothSVG() {
         custom={0.9}
       />
       <motion.path
-        d="M235 165 h50 v25 h-15 v10 l-10 -10 h-25 z"
+        d="M220 150 h80 v30 h-30 l-10 18 l-10 -18 h-30 z"
         fill="none"
         stroke="#c9a961"
         strokeWidth="2"

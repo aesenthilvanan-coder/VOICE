@@ -1,15 +1,49 @@
 import { motion } from 'framer-motion'
 
 // Edit gallery captions here — image files live in /public/images/gallery-1.jpg ... gallery-8.jpg
+// All photos are real documentary images, freely licensed via Wikimedia Commons.
+// Captions include the attribution required by CC BY / CC BY-SA licenses.
 const GALLERY_ITEMS = [
-  { src: '/images/gallery-1.jpg', caption: 'Placeholder caption 1', tall: true },
-  { src: '/images/gallery-2.jpg', caption: 'Placeholder caption 2', tall: false },
-  { src: '/images/gallery-3.jpg', caption: 'Placeholder caption 3', tall: false },
-  { src: '/images/gallery-4.jpg', caption: 'Placeholder caption 4', tall: true },
-  { src: '/images/gallery-5.jpg', caption: 'Placeholder caption 5', tall: false },
-  { src: '/images/gallery-6.jpg', caption: 'Placeholder caption 6', tall: true },
-  { src: '/images/gallery-7.jpg', caption: 'Placeholder caption 7', tall: false },
-  { src: '/images/gallery-8.jpg', caption: 'Placeholder caption 8', tall: false },
+  {
+    src: '/images/gallery-1.jpg',
+    caption: 'Battery cage hens, Brazil — Secretaria de Agricultura SP, Wikimedia Commons, CC BY 2.0',
+    tall: true,
+  },
+  {
+    src: '/images/gallery-2.jpg',
+    caption: 'Gestation crate housing — Humane Society of the United States, Wikimedia Commons, CC BY 3.0',
+    tall: false,
+  },
+  {
+    src: '/images/gallery-3.jpg',
+    caption: 'Sow in a gestation crate showing stereotypic behavior — Wikimedia Commons, CC0',
+    tall: false,
+  },
+  {
+    src: '/images/gallery-4.jpg',
+    caption: 'Pig en route to slaughter — Wikimedia Commons, CC0',
+    tall: true,
+  },
+  {
+    src: '/images/gallery-5.jpg',
+    caption: 'Pig in a slaughter transport truck — Wikimedia Commons, CC0',
+    tall: false,
+  },
+  {
+    src: '/images/gallery-6.jpg',
+    caption: 'Confined animal feeding operation — U.S. EPA, public domain',
+    tall: true,
+  },
+  {
+    src: '/images/gallery-7.jpg',
+    caption: 'Water buffalo moments after slaughter — Tom Maloney, Wikimedia Commons, CC BY-SA 2.0',
+    tall: false,
+  },
+  {
+    src: '/images/gallery-8.jpg',
+    caption: 'Religious slaughter by knife — Mostafameraji, Wikimedia Commons, CC BY-SA 4.0',
+    tall: false,
+  },
 ]
 
 const container = {

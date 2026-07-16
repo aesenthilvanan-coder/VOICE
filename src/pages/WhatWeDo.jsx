@@ -99,6 +99,18 @@ export default function WhatWeDo() {
             conversation with anyone who walks by. No debate team, no gotchas — just two
             sides talking until someone changes their mind, or explains why they won't.
           </motion.p>
+
+          <motion.a
+            href="https://3minutes.wtf/"
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.35 }}
+            className="inline-block mt-8 px-8 py-3 border border-voice-gold text-voice-gold font-display uppercase tracking-wide text-sm hover:bg-voice-gold hover:text-voice-black transition-colors"
+          >
+            Watch the 3 minutes we show at the booth ↗
+          </motion.a>
         </div>
 
         <div className="mt-16">
