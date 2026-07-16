@@ -106,6 +106,21 @@ const GALLERY_ITEMS = [
   { src: '/images/gallery-98.jpg', caption: 'Canard-mort-cage-defoncee — L214 - Ethique & Animaux, Wikimedia Commons, CC BY 3.0', tall: false },
   { src: '/images/gallery-99.jpg', caption: 'Canard-mort-cadavre-cage-oeil-creve — L214 - Ethique & Animaux, Wikimedia Commons, CC BY 3.0', tall: false },
   { src: '/images/gallery-100.jpg', caption: 'Canards-morts-canards-vivants-cage — L214 - Ethique & Animaux, Wikimedia Commons, CC BY 3.0', tall: false },
+  { src: '/images/gallery-101.jpg', caption: 'Dead chick, held by a worker — Maqi, Wikimedia Commons, CC BY-SA 3.0', tall: false },
+  { src: '/images/gallery-102.jpg', caption: 'Chicken corpse — Maqi, Wikimedia Commons, CC BY-SA 3.0', tall: true },
+  { src: '/images/gallery-103.jpg', caption: 'Dead chicken — Maqi, Wikimedia Commons, CC BY-SA 3.0', tall: true },
+  { src: '/images/gallery-104.jpg', caption: 'Dead chickens — Maqi, Wikimedia Commons, CC BY-SA 3.0', tall: false },
+  { src: '/images/gallery-105.jpg', caption: 'Dead hen in an egg-farm manure pit — Mercy For Animals MFA from Los Angeles, USA, Wikimedia Commons, CC BY 2.0', tall: false },
+  { src: '/images/gallery-106.jpg', caption: 'Discarded chicken heads and feet — Maqi, Wikimedia Commons, CC BY-SA 3.0', tall: false },
+  { src: '/images/gallery-107.jpg', caption: 'Dead calf on a transport truck floor — Maqi, Wikimedia Commons, CC BY-SA 3.0', tall: false },
+  { src: '/images/gallery-108.jpg', caption: 'Calf with an untreated open wound in a crate — Mercy For Animals MFA from Los Angeles, USA, Wikimedia Commons, CC BY 2.0', tall: true },
+  { src: '/images/gallery-109.jpg', caption: 'Rotting cattle corpses, Rohtak dumping ground — Unapologetic Sahil, Wikimedia Commons, CC BY-SA 4.0', tall: true },
+  { src: '/images/gallery-110.jpg', caption: 'Rotting cattle corpses, Rohtak dumping ground — Unapologetic Sahil, Wikimedia Commons, CC BY-SA 4.0', tall: true },
+  { src: '/images/gallery-111.jpg', caption: 'Dead calf at a slaughterhouse — L214 - Ethique & Animaux, Wikimedia Commons, CC BY 3.0', tall: false },
+  { src: '/images/gallery-112.jpg', caption: 'Dead calf discarded in a bin — L214 - Ethique & Animaux, Wikimedia Commons, CC BY 3.0', tall: false },
+  { src: '/images/gallery-113.jpg', caption: 'Calf in a pool of blood — Mercy For Animals MFA from Los Angeles, USA, Wikimedia Commons, CC BY 2.0', tall: false },
+  { src: '/images/gallery-114.jpg', caption: 'Bull after being speared, bullfighting — TheAnimalDay.org, Wikimedia Commons, CC BY 2.0', tall: false },
+  { src: '/images/gallery-115.jpg', caption: 'Severed buffalo heads after ritual slaughter — Sergey, Wikimedia Commons, CC BY-SA 2.0', tall: false },
 ]
 
 const BATCH_SIZE = 9
