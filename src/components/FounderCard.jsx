@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
+import InstagramIcon from './InstagramIcon'
 
-export default function FounderCard({ name, role, email, photo, bio }) {
+export default function FounderCard({ name, role, email, instagram, photo, bio }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -22,12 +23,26 @@ export default function FounderCard({ name, role, email, photo, bio }) {
         </h3>
         <p className="text-voice-gold text-xs uppercase tracking-[0.2em] mt-1">{role}</p>
         {bio && <p className="text-voice-cream/70 text-sm mt-4">{bio}</p>}
-        <a
-          href={`mailto:${email}`}
-          className="inline-block mt-5 text-sm text-voice-cream/80 border-b border-voice-gold/50 hover:text-voice-gold hover:border-voice-gold transition-colors"
-        >
-          {email}
-        </a>
+        <div className="mt-5 flex flex-col items-center gap-2">
+          {email && (
+            <a
+              href={`mailto:${email}`}
+              className="text-sm text-voice-cream/80 border-b border-voice-gold/50 hover:text-voice-gold hover:border-voice-gold transition-colors"
+            >
+              {email}
+            </a>
+          )}
+          {instagram && (
+            <a
+              href={`https://www.instagram.com/${instagram}/`}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm text-voice-cream/80 border-b border-voice-gold/50 hover:text-voice-gold hover:border-voice-gold transition-colors"
+            >
+              <InstagramIcon className="w-3.5 h-3.5" />@{instagram}
+            </a>
+          )}
+        </div>
       </div>
     </motion.div>
   )

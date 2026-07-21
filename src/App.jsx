@@ -1,11 +1,17 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import { AnimatePresence } from 'framer-motion'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import LoadingScreen from './components/LoadingScreen'
 import Home from './pages/Home'
 import WhatWeDo from './pages/WhatWeDo'
 import About from './pages/About'
 import Contact from './pages/Contact'
+
+// Minimum time the animated loading screen stays up, so it always gets to
+// finish its leaf/wordmark animation instead of flashing on slow connections.
+const MIN_LOADING_MS = 2200
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -16,8 +22,23 @@ function ScrollToTop() {
 }
 
 function App() {
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    document.body.style.overflow = 'hidden'
+    const timer = setTimeout(() => {
+      setLoading(false)
+      document.body.style.overflow = ''
+    }, MIN_LOADING_MS)
+    return () => {
+      clearTimeout(timer)
+      document.body.style.overflow = ''
+    }
+  }, [])
+
   return (
     <>
+      <AnimatePresence>{loading && <LoadingScreen />}</AnimatePresence>
       <div className="grain-overlay" />
       <ScrollToTop />
       <Navbar />

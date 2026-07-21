@@ -1,9 +1,11 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
+import ComingSoonBadge from './ComingSoonBadge'
 
 // EDIT HEADLINE HERE — kept as a simple constant for easy copy changes.
 const HEADLINE = 'EATING ANIMALS IS WRONG.'
 const HEADLINE_LINE_2 = 'CHANGE OUR MIND.'
+const TAGLINE = 'Reason in defense of the voiceless.'
 const SUBHEAD =
   'We set up public debate booths and have the conversation most people avoid. No script. No shouting. Just questions.'
 
@@ -32,10 +34,21 @@ export default function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="font-display uppercase tracking-[0.35em] text-voice-gold text-xs md:text-sm mb-6"
+          className="font-display uppercase tracking-[0.35em] text-voice-gold text-xs md:text-sm mb-4"
         >
           VOICE &mdash; Vegans Organizing for Informed Conversation &amp; Ethics
         </motion.span>
+
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.05 }}
+          className="italic text-voice-cream/70 text-sm md:text-base mb-5"
+        >
+          {TAGLINE}
+        </motion.p>
+
+        <ComingSoonBadge className="mb-8" />
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}

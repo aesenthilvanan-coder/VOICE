@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom'
+import InstagramIcon from './InstagramIcon'
 
 // Editable org info
 const ORG_NAME = 'VOICE'
 const ORG_FULL_NAME = 'Vegans Organizing for Informed Conversation & Ethics'
+const TAGLINE = 'Reason in defense of the voiceless.'
+const INSTAGRAM_URL = 'https://www.instagram.com/voice_vegan/'
 const FOUNDER_EMAILS = [
   { name: 'Aaryan Senthilvanan', email: 'aesenthilvanan@gmail.com' },
   { name: 'Mason Bennett', email: 'bennettmason60@gmail.com' },
@@ -20,6 +23,16 @@ export default function Footer() {
             </span>
           </div>
           <p className="text-voice-cream/60 text-sm max-w-xs leading-relaxed">{ORG_FULL_NAME}</p>
+          <p className="text-voice-gold/80 text-sm italic mt-2">{TAGLINE}</p>
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 mt-5 text-voice-cream/70 hover:text-voice-gold text-sm transition-colors"
+          >
+            <InstagramIcon className="w-4 h-4" />
+            @voice_vegan
+          </a>
         </div>
 
         <div>

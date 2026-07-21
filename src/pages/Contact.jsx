@@ -1,20 +1,29 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import FounderCard from '../components/FounderCard'
+import ComingSoonBadge from '../components/ComingSoonBadge'
 
-// Editable founder data
+// Editable founder/debater data
 const FOUNDERS = [
   {
     name: 'Aaryan Senthilvanan',
-    role: 'Co-Founder',
+    role: 'Co-Founder & Debater',
     email: 'aesenthilvanan@gmail.com',
+    instagram: 'aris.debates',
     photo: '/images/founder-aaryan.jpg',
   },
   {
     name: 'Mason Bennett',
-    role: 'Co-Founder',
+    role: 'Co-Founder & Debater',
     email: 'bennettmason60@gmail.com',
+    instagram: 'masonabennett35',
     photo: '/images/founder-mason.jpg',
+  },
+  {
+    name: 'Ian Aughenbaugh',
+    role: 'Debater',
+    instagram: 'ianaughenbaugh13',
+    photo: '/images/founder-ian.jpg',
   },
 ]
 
@@ -112,9 +121,24 @@ export default function Contact() {
       </section>
 
       <section className="bg-voice-black pb-20 md:pb-28 px-6 md:px-10">
-        <div className="mx-auto max-w-4xl flex flex-col sm:flex-row gap-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mx-auto max-w-5xl text-center mb-12 flex flex-col items-center gap-4"
+        >
+          <span className="font-display uppercase tracking-[0.3em] text-voice-gold text-xs">
+            The Debaters
+          </span>
+          <h2 className="font-display uppercase text-2xl md:text-4xl text-voice-cream">
+            Three voices, one table.
+          </h2>
+          <ComingSoonBadge />
+        </motion.div>
+        <div className="mx-auto max-w-5xl grid grid-cols-1 sm:grid-cols-3 gap-8">
           {FOUNDERS.map((f) => (
-            <FounderCard key={f.email} {...f} />
+            <FounderCard key={f.name} {...f} />
           ))}
         </div>
       </section>
