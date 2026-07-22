@@ -6,6 +6,7 @@ import Gallery from '../components/Gallery'
 import StatCounter from '../components/StatCounter'
 import CTASection from '../components/CTASection'
 import Highlight from '../components/Highlight'
+import GlowOrb from '../components/GlowOrb'
 
 // Placeholder stats — swap for real figures once available
 const STATS = [
@@ -23,13 +24,15 @@ export default function Home() {
       <Hero />
 
       {/* Intro / framing section */}
-      <section className="bg-voice-black py-20 md:py-28 px-6 md:px-10">
+      <section className="relative overflow-hidden bg-voice-black py-20 md:py-28 px-6 md:px-10">
+        <GlowOrb color="leaf" size={420} top="-6rem" right="-6rem" duration={13} />
+        <GlowOrb color="gold" size={340} bottom="-4rem" left="-4rem" duration={11} delay={2} />
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="mx-auto max-w-3xl text-center"
+          className="relative mx-auto max-w-3xl text-center"
         >
           <h2 className="font-display uppercase text-2xl md:text-4xl text-voice-cream leading-snug">
             We don't preach. We <Highlight className="text-voice-gold">debate</Highlight>.
@@ -46,7 +49,7 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.15 }}
-          className="mx-auto max-w-5xl mt-16 grid grid-cols-1 sm:grid-cols-3 gap-10"
+          className="relative mx-auto max-w-5xl mt-16 grid grid-cols-1 sm:grid-cols-3 gap-10"
         >
           {STATS.map((s) => (
             <StatCounter key={s.label} {...s} />

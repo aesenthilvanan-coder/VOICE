@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom'
 import Highlight from '../components/Highlight'
 import BoothSVG from '../components/BoothSVG'
 import InstagramGrid from '../components/InstagramGrid'
+import GlowOrb from '../components/GlowOrb'
+
+const MotionLink = motion(Link)
 
 // Editable prompt copy for the debate booth signs
 const PROMPTS = [
@@ -66,8 +69,9 @@ export default function WhatWeDo() {
   return (
     <div>
       {/* Intro hero */}
-      <section className="pt-40 pb-24 px-6 md:px-10 bg-voice-black">
-        <div className="mx-auto max-w-4xl text-center">
+      <section className="relative overflow-hidden pt-40 pb-24 px-6 md:px-10 bg-voice-black">
+        <GlowOrb color="gold" size={420} top="-6rem" right="-6rem" duration={13} />
+        <div className="relative mx-auto max-w-4xl text-center">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -103,6 +107,8 @@ export default function WhatWeDo() {
             rel="noopener noreferrer"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.96 }}
             transition={{ duration: 0.6, delay: 0.35 }}
             className="inline-block mt-8 px-8 py-3 border border-voice-gold text-voice-gold font-display uppercase tracking-wide text-sm hover:bg-voice-gold hover:text-voice-black transition-colors"
           >
@@ -110,19 +116,20 @@ export default function WhatWeDo() {
           </motion.a>
         </div>
 
-        <div className="mt-16">
+        <div className="relative mt-16">
           <BoothSVG />
         </div>
       </section>
 
       {/* Honest status section — momentum, not apology */}
-      <section className="bg-voice-green py-20 md:py-28 px-6 md:px-10 border-y border-voice-gold/20">
+      <section className="relative overflow-hidden bg-voice-green py-20 md:py-28 px-6 md:px-10 border-y border-voice-gold/20">
+        <GlowOrb color="leaf" size={400} bottom="-6rem" left="-6rem" duration={12} delay={1} />
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="mx-auto max-w-3xl text-center"
+          className="relative mx-auto max-w-3xl text-center"
         >
           <span className="font-display uppercase tracking-[0.3em] text-voice-gold text-xs">
             Right Now
@@ -139,12 +146,14 @@ export default function WhatWeDo() {
             booth in your city, or just be part of getting the first one on the ground, we
             want to hear from you.
           </p>
-          <Link
+          <MotionLink
             to="/contact"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.96 }}
             className="inline-block mt-8 px-8 py-3 bg-voice-gold text-voice-black font-display uppercase tracking-wide text-sm hover:bg-voice-cream transition-colors"
           >
             Help Us Set Up a Booth
-          </Link>
+          </MotionLink>
         </motion.div>
       </section>
 
@@ -152,13 +161,14 @@ export default function WhatWeDo() {
       <PinnedReveal />
 
       {/* Instagram content arm */}
-      <section className="bg-voice-black py-20 md:py-28 px-6 md:px-10">
+      <section className="relative overflow-hidden bg-voice-black py-20 md:py-28 px-6 md:px-10">
+        <GlowOrb color="gold" size={380} top="-4rem" left="50%" duration={13} delay={2} />
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="mx-auto max-w-3xl text-center mb-14"
+          className="relative mx-auto max-w-3xl text-center mb-14"
         >
           <span className="font-display uppercase tracking-[0.3em] text-voice-gold text-xs">
             On Camera
@@ -173,7 +183,7 @@ export default function WhatWeDo() {
           </p>
         </motion.div>
 
-        <div className="mx-auto max-w-4xl">
+        <div className="relative mx-auto max-w-4xl">
           <InstagramGrid />
         </div>
       </section>

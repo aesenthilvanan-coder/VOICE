@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import Highlight from '../components/Highlight'
 import StatCounter from '../components/StatCounter'
+import GlowOrb from '../components/GlowOrb'
 
 // Editable mission copy
 const MISSION_PARAGRAPHS = [
@@ -39,8 +40,9 @@ const ABOUT_STATS = [
 export default function About() {
   return (
     <div>
-      <section className="pt-40 pb-24 px-6 md:px-10 bg-voice-black">
-        <div className="mx-auto max-w-4xl text-center">
+      <section className="relative overflow-hidden pt-40 pb-24 px-6 md:px-10 bg-voice-black">
+        <GlowOrb color="leaf" size={440} top="-6rem" left="-8rem" duration={13} />
+        <div className="relative mx-auto max-w-4xl text-center">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -87,23 +89,25 @@ export default function About() {
         </div>
       </section>
 
-      <section className="bg-voice-black py-20 md:py-28 px-6 md:px-10">
+      <section className="relative overflow-hidden bg-voice-black py-20 md:py-28 px-6 md:px-10">
+        <GlowOrb color="gold" size={400} bottom="-6rem" right="-6rem" duration={12} delay={1.5} />
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="font-display uppercase text-3xl md:text-5xl text-voice-cream text-center mb-14"
+          className="relative font-display uppercase text-3xl md:text-5xl text-voice-cream text-center mb-14"
         >
           What we stand on
         </motion.h2>
-        <div className="mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="relative mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-8">
           {VALUES.map((v, i) => (
             <motion.div
               key={v.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
+              whileHover={{ x: 6, borderColor: 'var(--color-voice-leaf)' }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
               className="border-l-2 border-voice-gold pl-6"
             >
@@ -115,18 +119,21 @@ export default function About() {
       </section>
 
       {/* Founders' note */}
-      <section className="bg-voice-ink py-20 md:py-28 px-6 md:px-10 border-t border-voice-gold/20">
+      <section className="relative overflow-hidden bg-voice-ink py-20 md:py-28 px-6 md:px-10 border-t border-voice-gold/20">
+        <GlowOrb color="leaf" size={360} top="-4rem" left="50%" duration={11} />
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="mx-auto max-w-2xl"
+          className="relative mx-auto max-w-2xl"
         >
-          <img
+          <motion.img
             src="/images/logo-mark.png"
             alt="VOICE"
-            className="w-12 h-12 mx-auto mb-6 opacity-90"
+            animate={{ scale: [1, 1.08, 1], opacity: [0.9, 1, 0.9] }}
+            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+            className="w-12 h-12 mx-auto mb-6"
           />
           <span className="font-display uppercase tracking-[0.3em] text-voice-gold text-xs block text-center mb-6">
             A Note From Us

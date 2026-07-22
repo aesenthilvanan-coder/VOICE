@@ -8,13 +8,14 @@ export default function FounderCard({ name, role, email, instagram, photo, bio }
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
+      whileHover={{ y: -8, boxShadow: '0 20px 40px -12px rgba(201, 169, 97, 0.35)' }}
       className="group flex-1 border border-voice-cream/15 hover:border-voice-gold/60 transition-colors bg-voice-ink"
     >
       <div className="aspect-[4/5] overflow-hidden">
         <img
           src={photo}
           alt={name}
-          className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+          className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500"
         />
       </div>
       <div className="p-6 text-center">

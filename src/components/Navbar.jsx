@@ -28,8 +28,14 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 md:px-10 flex items-center justify-between h-20">
-        <NavLink to="/" className="flex items-center gap-3 z-50" onClick={() => setOpen(false)}>
-          <img src="/images/logo.png" alt="VOICE logo" className="h-10 w-10 rounded-full" />
+        <NavLink to="/" className="group flex items-center gap-3 z-50" onClick={() => setOpen(false)}>
+          <motion.img
+            src="/images/logo.png"
+            alt="VOICE logo"
+            whileHover={{ rotate: 12, scale: 1.08 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 15 }}
+            className="h-10 w-10 rounded-full"
+          />
           <span className="font-display text-xl tracking-wider text-voice-cream uppercase">
             Voice
           </span>
@@ -41,12 +47,21 @@ export default function Navbar() {
               key={link.to}
               to={link.to}
               className={({ isActive }) =>
-                `font-display uppercase tracking-wide text-sm relative py-2 transition-colors ${
+                `group font-display uppercase tracking-wide text-sm relative py-2 transition-colors ${
                   isActive ? 'text-voice-gold' : 'text-voice-cream hover:text-voice-gold'
                 }`
               }
             >
-              {link.label}
+              {({ isActive }) => (
+                <>
+                  {link.label}
+                  <span
+                    className={`absolute left-0 -bottom-0.5 h-px bg-voice-gold transition-all duration-300 ${
+                      isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                    }`}
+                  />
+                </>
+              )}
             </NavLink>
           ))}
         </nav>

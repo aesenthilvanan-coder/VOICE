@@ -44,12 +44,13 @@ export default function InstagramGrid() {
             target="_blank"
             rel="noreferrer"
             variants={item}
+            whileHover={{ y: -4 }}
             className="group relative aspect-square overflow-hidden bg-voice-ink border border-voice-cream/10 hover:border-voice-gold/50 transition-colors"
           >
             <img
               src={post.image}
               alt={post.caption}
-              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+              className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500"
             />
             <div className="absolute inset-0 bg-voice-black/45 group-hover:bg-voice-black/20 transition-colors flex items-end p-3">
               <p className="text-voice-cream text-xs md:text-sm leading-snug">{post.caption}</p>
@@ -83,15 +84,17 @@ export default function InstagramGrid() {
       </motion.div>
 
       <div className="mt-10 text-center">
-        <a
+        <motion.a
           href="https://www.instagram.com/voice_vegan/"
           target="_blank"
           rel="noreferrer"
+          whileHover={{ scale: 1.04 }}
+          whileTap={{ scale: 0.96 }}
           className="inline-flex items-center gap-2 px-8 py-3 border border-voice-gold text-voice-gold font-display uppercase tracking-wide text-sm hover:bg-voice-gold hover:text-voice-black transition-colors"
         >
           <InstagramIcon className="w-4 h-4" />
           Follow @voice_vegan
-        </a>
+        </motion.a>
       </div>
     </>
   )

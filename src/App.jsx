@@ -4,6 +4,7 @@ import { AnimatePresence } from 'framer-motion'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import LoadingScreen from './components/LoadingScreen'
+import AmbientLeaves from './components/AmbientLeaves'
 import Home from './pages/Home'
 import WhatWeDo from './pages/WhatWeDo'
 import About from './pages/About'
@@ -39,6 +40,7 @@ function App() {
   return (
     <>
       <AnimatePresence>{loading && <LoadingScreen />}</AnimatePresence>
+      <AmbientLeaves />
       <div className="grain-overlay" />
       <ScrollToTop />
       <Navbar />

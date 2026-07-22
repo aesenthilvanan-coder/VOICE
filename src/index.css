@@ -9,6 +9,9 @@
   --color-voice-gold: #c9a961;
   --color-voice-gold-dim: #8a7440;
   --color-voice-cream: #f2efe9;
+  /* Living-green accent — brighter than the deep panel green, used sparingly
+     for glows/hover states so the site reads as alive, not just gold-on-black */
+  --color-voice-leaf: #6fbf73;
 
   --font-display: "Oswald", "Arial Narrow", sans-serif;
   --font-body: "Inter", system-ui, sans-serif;

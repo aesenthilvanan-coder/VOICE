@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import ComingSoonBadge from './ComingSoonBadge'
+import GlowOrb from './GlowOrb'
 
 // EDIT HEADLINE HERE — kept as a simple constant for easy copy changes.
 const HEADLINE = 'EATING ANIMALS IS WRONG.'
@@ -21,10 +22,16 @@ export default function Hero() {
         style={{ y }}
         src="/images/hero-booth.jpg"
         alt="VOICE debate booth in action"
+        initial={{ scale: 1 }}
+        animate={{ scale: 1.08 }}
+        transition={{ duration: 22, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut' }}
         className="absolute inset-0 w-full h-[130%] object-cover"
       />
       {/* Flat solid scrim, not a gradient, per brand rules */}
       <div className="absolute inset-0 bg-voice-black/55" />
+
+      <GlowOrb color="gold" size={480} top="-8rem" left="-6rem" duration={12} />
+      <GlowOrb color="leaf" size={420} bottom="-6rem" right="-4rem" duration={14} delay={2} />
 
       <motion.div
         style={{ opacity }}
@@ -90,9 +97,12 @@ export default function Hero() {
       <motion.img
         src="/images/logo-mark.png"
         alt=""
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.9 }}
-        transition={{ delay: 1, duration: 0.6 }}
+        initial={{ opacity: 0, rotate: 0 }}
+        animate={{ opacity: 0.9, rotate: [0, -6, 6, 0] }}
+        transition={{
+          opacity: { delay: 1, duration: 0.6 },
+          rotate: { delay: 1.6, duration: 6, repeat: Infinity, ease: 'easeInOut' },
+        }}
         className="absolute bottom-8 right-6 md:right-10 z-10 w-10 h-10 md:w-14 md:h-14"
       />
     </section>

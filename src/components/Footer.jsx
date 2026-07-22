@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import InstagramIcon from './InstagramIcon'
 
 // Editable org info
@@ -9,6 +10,7 @@ const INSTAGRAM_URL = 'https://www.instagram.com/voice_vegan/'
 const FOUNDER_EMAILS = [
   { name: 'Aaryan Senthilvanan', email: 'aesenthilvanan@gmail.com' },
   { name: 'Mason Bennett', email: 'bennettmason60@gmail.com' },
+  { name: 'Ian Aughenbaugh', email: 'ianaugh@icloud.com' },
 ]
 
 export default function Footer() {
@@ -24,15 +26,16 @@ export default function Footer() {
           </div>
           <p className="text-voice-cream/60 text-sm max-w-xs leading-relaxed">{ORG_FULL_NAME}</p>
           <p className="text-voice-gold/80 text-sm italic mt-2">{TAGLINE}</p>
-          <a
+          <motion.a
             href={INSTAGRAM_URL}
             target="_blank"
             rel="noreferrer"
+            whileHover={{ x: 4 }}
             className="inline-flex items-center gap-2 mt-5 text-voice-cream/70 hover:text-voice-gold text-sm transition-colors"
           >
             <InstagramIcon className="w-4 h-4" />
             @voice_vegan
-          </a>
+          </motion.a>
         </div>
 
         <div>

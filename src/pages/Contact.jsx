@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import FounderCard from '../components/FounderCard'
 import ComingSoonBadge from '../components/ComingSoonBadge'
+import GlowOrb from '../components/GlowOrb'
 
 // Editable founder/debater data
 const FOUNDERS = [
@@ -22,6 +23,7 @@ const FOUNDERS = [
   {
     name: 'Ian Aughenbaugh',
     role: 'Debater',
+    email: 'ianaugh@icloud.com',
     instagram: 'ianaughenbaugh13',
     photo: '/images/founder-ian.jpg',
   },
@@ -77,12 +79,14 @@ function ContactForm() {
           className="w-full bg-voice-ink border border-voice-cream/20 focus:border-voice-gold outline-none px-4 py-3 text-voice-cream resize-none"
         />
       </div>
-      <button
+      <motion.button
         type="submit"
+        whileHover={{ scale: 1.03 }}
+        whileTap={{ scale: 0.97 }}
         className="w-full px-8 py-3 bg-voice-gold text-voice-black font-display uppercase tracking-wide text-sm hover:bg-voice-cream transition-colors"
       >
         Send
-      </button>
+      </motion.button>
     </form>
   )
 }
@@ -120,13 +124,15 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="bg-voice-black pb-20 md:pb-28 px-6 md:px-10">
+      <section className="relative overflow-hidden bg-voice-black pb-20 md:pb-28 px-6 md:px-10">
+        <GlowOrb color="leaf" size={380} top="0" left="-6rem" duration={13} />
+        <GlowOrb color="gold" size={340} bottom="-4rem" right="-4rem" duration={11} delay={1.5} />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mx-auto max-w-5xl text-center mb-12 flex flex-col items-center gap-4"
+          className="relative mx-auto max-w-5xl text-center mb-12 flex flex-col items-center gap-4"
         >
           <span className="font-display uppercase tracking-[0.3em] text-voice-gold text-xs">
             The Debaters
@@ -143,17 +149,20 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="bg-voice-green py-20 md:py-28 px-6 md:px-10 border-y border-voice-gold/20">
+      <section className="relative overflow-hidden bg-voice-green py-20 md:py-28 px-6 md:px-10 border-y border-voice-gold/20">
+        <GlowOrb color="gold" size={360} top="-4rem" right="10%" duration={12} />
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="font-display uppercase text-2xl md:text-4xl text-voice-cream text-center mb-10"
+          className="relative font-display uppercase text-2xl md:text-4xl text-voice-cream text-center mb-10"
         >
           Or send a message directly
         </motion.h2>
-        <ContactForm />
+        <div className="relative">
+          <ContactForm />
+        </div>
       </section>
     </div>
   )
