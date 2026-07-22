@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import Highlight from '../components/Highlight'
 import BoothSVG from '../components/BoothSVG'
 import InstagramGrid from '../components/InstagramGrid'
+import PulseRings from '../components/PulseRings'
+import TypingDots from '../components/TypingDots'
 import GlowOrb from '../components/GlowOrb'
 
 const MotionLink = motion(Link)
@@ -70,7 +72,7 @@ export default function WhatWeDo() {
     <div>
       {/* Intro hero */}
       <section className="relative overflow-hidden pt-40 pb-24 px-6 md:px-10 bg-voice-black">
-        <GlowOrb color="gold" size={420} top="-6rem" right="-6rem" duration={13} />
+        <PulseRings maxSize={640} />
         <div className="relative mx-auto max-w-4xl text-center">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
@@ -112,7 +114,7 @@ export default function WhatWeDo() {
             transition={{ duration: 0.6, delay: 0.35 }}
             className="inline-block mt-8 px-8 py-3 border border-voice-gold text-voice-gold font-display uppercase tracking-wide text-sm hover:bg-voice-gold hover:text-voice-black transition-colors"
           >
-            Watch the 3 minutes we show at the booth ↗
+            Watch the video that's turned thousands vegan ↗
           </motion.a>
         </div>
 
@@ -139,6 +141,7 @@ export default function WhatWeDo() {
             <br />
             We're building it right now.
           </h2>
+          <TypingDots className="mt-5 justify-center" />
           <p className="mt-6 text-voice-cream/80 text-base md:text-lg">
             VOICE is brand new. We're actively organizing, scouting locations, and reaching
             out to venues and campuses to set up our first debate booth. That's not a

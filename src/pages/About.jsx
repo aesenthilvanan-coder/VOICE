@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import Highlight from '../components/Highlight'
 import StatCounter from '../components/StatCounter'
 import GlowOrb from '../components/GlowOrb'
+import GrowingVine from '../components/GrowingVine'
 
 // Editable mission copy
 const MISSION_PARAGRAPHS = [
@@ -64,8 +65,9 @@ export default function About() {
         </div>
       </section>
 
-      <section className="bg-voice-black pb-20 md:pb-28 px-6 md:px-10">
-        <div className="mx-auto max-w-2xl space-y-6">
+      <section className="relative overflow-hidden bg-voice-black pb-20 md:pb-28 px-6 md:px-10">
+        <GrowingVine />
+        <div className="relative mx-auto max-w-2xl space-y-6">
           {MISSION_PARAGRAPHS.map((p, i) => (
             <motion.p
               key={i}

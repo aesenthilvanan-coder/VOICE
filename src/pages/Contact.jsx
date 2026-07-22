@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import FounderCard from '../components/FounderCard'
 import ComingSoonBadge from '../components/ComingSoonBadge'
 import GlowOrb from '../components/GlowOrb'
+import DebateOrbit from '../components/DebateOrbit'
 
 // Editable founder/debater data
 const FOUNDERS = [
@@ -125,8 +126,7 @@ export default function Contact() {
       </section>
 
       <section className="relative overflow-hidden bg-voice-black pb-20 md:pb-28 px-6 md:px-10">
-        <GlowOrb color="leaf" size={380} top="0" left="-6rem" duration={13} />
-        <GlowOrb color="gold" size={340} bottom="-4rem" right="-4rem" duration={11} delay={1.5} />
+        <DebateOrbit className="opacity-70" />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -142,7 +142,7 @@ export default function Contact() {
           </h2>
           <ComingSoonBadge />
         </motion.div>
-        <div className="mx-auto max-w-5xl grid grid-cols-1 sm:grid-cols-3 gap-8">
+        <div className="relative mx-auto max-w-5xl grid grid-cols-1 sm:grid-cols-3 gap-8">
           {FOUNDERS.map((f) => (
             <FounderCard key={f.name} {...f} />
           ))}
