@@ -3,7 +3,7 @@ import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-
 import { Link } from 'react-router-dom'
 import Highlight from '../components/Highlight'
 import BoothSVG from '../components/BoothSVG'
-import InstagramGrid from '../components/InstagramGrid'
+import VideoGrid from '../components/VideoGrid'
 import PulseRings from '../components/PulseRings'
 import TypingDots from '../components/TypingDots'
 import GlowOrb from '../components/GlowOrb'
@@ -187,7 +187,7 @@ export default function WhatWeDo() {
         </motion.div>
 
         <div className="relative mx-auto max-w-4xl">
-          <InstagramGrid />
+          <VideoGrid />
         </div>
       </section>
     </div>
