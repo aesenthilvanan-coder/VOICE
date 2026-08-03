@@ -35,7 +35,7 @@ const VALUES = [
 const ABOUT_STATS = [
   { value: 2, label: 'Co-founders getting this off the ground' },
   { value: 1, label: 'City we are starting in' },
-  { value: 0, label: 'Booths run so far — first one is confirmed and going up ASAP', suffix: '' },
+  { value: 1, label: 'Booths run so far — and many more on the way', suffix: '' },
 ]
 
 export default function About() {
@@ -143,9 +143,9 @@ export default function About() {
           <p className="text-voice-cream/80 text-base md:text-lg leading-relaxed italic text-center">
             "We built VOICE because we were tired of the conversation about animal
             agriculture happening everywhere except in person, in public, between real
-            people. We don't have this fully figured out yet. We're two people building the
-            first booth right now — and we'd rather do that honestly, in front of everyone,
-            than wait until it looks polished."
+            people. We just ran our first booth, and we're two people already planning the
+            next one — we'd rather do this honestly, in front of everyone, than wait until
+            it looks polished."
           </p>
           <p className="mt-6 text-center text-voice-gold font-display uppercase tracking-wide text-sm">
             — Aaryan &amp; Mason, Co-Founders

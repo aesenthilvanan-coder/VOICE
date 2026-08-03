@@ -16,7 +16,7 @@ export default function ComingSoonBadge({ className = '' }) {
         className="w-1.5 h-1.5 rounded-full bg-voice-gold shrink-0"
       />
       <span className="font-display uppercase tracking-[0.15em] text-voice-gold text-[10px] md:text-xs whitespace-nowrap">
-        peta2 &times; ASAP Debates &mdash; Booths Going Up Now
+        peta2 &times; ASAP Debates &mdash; First Booth Down, More Coming
       </span>
     </motion.div>
   )
