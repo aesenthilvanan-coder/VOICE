@@ -35,7 +35,7 @@ const VALUES = [
 const ABOUT_STATS = [
   { value: 2, label: 'Co-founders getting this off the ground' },
   { value: 1, label: 'City we are starting in' },
-  { value: 0, label: 'Booths run so far — that changes soon', suffix: '' },
+  { value: 0, label: 'Booths run so far — first one is confirmed and going up ASAP', suffix: '' },
 ]
 
 export default function About() {

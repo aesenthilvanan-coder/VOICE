@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 
-// Pulsing pill badge for the peta2 / ASAP debate teaser — pulled straight from
-// the real @voice_vegan bio line so the site and Instagram stay in sync.
+// Pulsing pill badge announcing the peta2 / ASAP debate booths — pulled
+// straight from the real @voice_vegan Instagram so the site stays in sync.
 export default function ComingSoonBadge({ className = '' }) {
   return (
     <motion.div
@@ -16,7 +16,7 @@ export default function ComingSoonBadge({ className = '' }) {
         className="w-1.5 h-1.5 rounded-full bg-voice-gold shrink-0"
       />
       <span className="font-display uppercase tracking-[0.15em] text-voice-gold text-[10px] md:text-xs whitespace-nowrap">
-        peta2 &times; ASAP Debates &mdash; Coming Soon
+        peta2 &times; ASAP Debates &mdash; Booths Going Up Now
       </span>
     </motion.div>
   )

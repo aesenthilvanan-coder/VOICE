@@ -137,17 +137,16 @@ export default function WhatWeDo() {
             Right Now
           </span>
           <h2 className="font-display uppercase text-3xl md:text-5xl text-voice-cream mt-4 leading-tight">
-            We haven't run our first booth yet.
+            Our first booth is confirmed.
             <br />
-            We're building it right now.
+            It's going up ASAP.
           </h2>
           <TypingDots className="mt-5 justify-center" />
           <p className="mt-6 text-voice-cream/80 text-base md:text-lg">
-            VOICE is brand new. We're actively organizing, scouting locations, and reaching
-            out to venues and campuses to set up our first debate booth. That's not a
-            weakness — it's a starting line. If you want to help launch this thing, host a
-            booth in your city, or just be part of getting the first one on the ground, we
-            want to hear from you.
+            VOICE is brand new, and our first debate booth — a peta2 &times; ASAP Debates
+            event — is locked in and moving fast. We're finalizing logistics now to get it on
+            the ground. If you want to help set it up, host a booth in your city, or just be
+            part of getting this first one launched, we want to hear from you.
           </p>
           <MotionLink
             to="/contact"
