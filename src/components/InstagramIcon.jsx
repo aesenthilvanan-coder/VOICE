@@ -1,4 +1,4 @@
-// Small reusable Instagram glyph — used anywhere we link out to @voice_vegan
+// Small reusable Instagram glyph — used anywhere we link out to @vegan_debate
 export default function InstagramIcon({ className = 'w-5 h-5' }) {
   return (
     <svg

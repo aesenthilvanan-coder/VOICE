@@ -6,11 +6,16 @@ import InstagramIcon from './InstagramIcon'
 const ORG_NAME = 'VOICE'
 const ORG_FULL_NAME = 'Vegans Organizing for Informed Conversation & Ethics'
 const TAGLINE = 'Reason in defense of the voiceless.'
-const INSTAGRAM_URL = 'https://www.instagram.com/voice_vegan/'
+const INSTAGRAM_URL = 'https://www.instagram.com/vegan_debate/'
+const ORG_EMAIL = 'voices4vegans@gmail.com'
 const FOUNDER_EMAILS = [
   { name: 'Aaryan Senthilvanan', email: 'aesenthilvanan@gmail.com' },
   { name: 'Mason Bennett', email: 'bennettmason60@gmail.com' },
   { name: 'Ian Aughenbaugh', email: 'ianaugh@icloud.com' },
+]
+const PARTNERS = [
+  { name: 'peta2', url: 'https://www.peta2.com/' },
+  { name: 'ASAP (Allied Scholars for Animal Protection)', url: 'https://www.alliedscholars.org/' },
 ]
 
 export default function Footer() {
@@ -34,7 +39,7 @@ export default function Footer() {
             className="inline-flex items-center gap-2 mt-5 text-voice-cream/70 hover:text-voice-gold text-sm transition-colors"
           >
             <InstagramIcon className="w-4 h-4" />
-            @voice_vegan
+            @vegan_debate
           </motion.a>
         </div>
 
@@ -63,6 +68,14 @@ export default function Footer() {
             Contact
           </h3>
           <ul className="space-y-2">
+            <li>
+              <a
+                href={`mailto:${ORG_EMAIL}`}
+                className="text-voice-cream/70 hover:text-voice-gold text-sm"
+              >
+                {ORG_EMAIL}
+              </a>
+            </li>
             {FOUNDER_EMAILS.map((f) => (
               <li key={f.email}>
                 <a
@@ -75,6 +88,18 @@ export default function Footer() {
             ))}
           </ul>
         </div>
+      </div>
+
+      <div className="mx-auto max-w-7xl px-6 md:px-10 mt-10 flex flex-wrap items-center gap-x-2 gap-y-1 text-voice-cream/40 text-xs tracking-wide">
+        <span>In partnership with</span>
+        {PARTNERS.map((p, i) => (
+          <span key={p.url}>
+            <a href={p.url} target="_blank" rel="noreferrer" className="hover:text-voice-gold">
+              {p.name}
+            </a>
+            {i < PARTNERS.length - 1 && <span className="mx-1">&middot;</span>}
+          </span>
+        ))}
       </div>
 
       <div className="gold-rule my-8 max-w-7xl mx-auto" />

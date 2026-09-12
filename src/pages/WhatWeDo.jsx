@@ -143,9 +143,27 @@ export default function WhatWeDo() {
           </h2>
           <TypingDots className="mt-5 justify-center" />
           <p className="mt-6 text-voice-cream/80 text-base md:text-lg">
-            VOICE ran its first debate booth — a peta2 &times; ASAP Debates event — and we're
-            already locking in the next ones. This is just the start. If you want to help
-            host a booth in your city, or be part of what's next, we want to hear from you.
+            VOICE ran its first debate booth — a{' '}
+            <a
+              href="https://www.peta2.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="text-voice-gold underline decoration-voice-gold/40 underline-offset-2 hover:decoration-voice-gold"
+            >
+              peta2
+            </a>{' '}
+            &times;{' '}
+            <a
+              href="https://www.alliedscholars.org/"
+              target="_blank"
+              rel="noreferrer"
+              className="text-voice-gold underline decoration-voice-gold/40 underline-offset-2 hover:decoration-voice-gold"
+            >
+              ASAP
+            </a>{' '}
+            Debates event — and we're already locking in the next ones. This is just the
+            start. If you want to help host a booth in your city, or be part of what's next,
+            we want to hear from you.
           </p>
           <MotionLink
             to="/contact"

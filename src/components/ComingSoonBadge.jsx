@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 
 // Pulsing pill badge announcing the peta2 / ASAP debate booths — pulled
-// straight from the real @voice_vegan Instagram so the site stays in sync.
+// straight from the real @vegan_debate Instagram so the site stays in sync.
 export default function ComingSoonBadge({ className = '' }) {
   return (
     <motion.div

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import InstagramIcon from './InstagramIcon'
 
-// Our 6 best clips from @voice_vegan — add/replace entries here as stronger
+// Our 6 best clips from @vegan_debate — add/replace entries here as stronger
 // content goes up (shortcode from the post URL, a downloaded poster frame in
 // public/images, and the caption/hook).
 const VIDEOS = [
@@ -101,7 +101,7 @@ export default function VideoGrid() {
 
       <div className="mt-10 text-center">
         <motion.a
-          href="https://www.instagram.com/voice_vegan/"
+          href="https://www.instagram.com/vegan_debate/"
           target="_blank"
           rel="noreferrer"
           whileHover={{ scale: 1.04 }}
@@ -109,7 +109,7 @@ export default function VideoGrid() {
           className="inline-flex items-center gap-2 px-8 py-3 border border-voice-gold text-voice-gold font-display uppercase tracking-wide text-sm hover:bg-voice-gold hover:text-voice-black transition-colors"
         >
           <InstagramIcon className="w-4 h-4" />
-          Follow @voice_vegan
+          Follow @vegan_debate
         </motion.a>
       </div>
 

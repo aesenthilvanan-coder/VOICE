@@ -32,6 +32,20 @@ const VALUES = [
   },
 ]
 
+const PARTNERS = [
+  {
+    name: 'peta2',
+    blurb: "PETA's youth division — the team behind the debate booth format, and our first partner on the ground.",
+    url: 'https://www.peta2.com/',
+  },
+  {
+    name: 'ASAP',
+    fullName: 'Allied Scholars for Animal Protection',
+    blurb: 'A student network building the animal rights movement on campuses nationwide — helping us bring booths to more schools.',
+    url: 'https://www.alliedscholars.org/',
+  },
+]
+
 const ABOUT_STATS = [
   { value: 2, label: 'Co-founders getting this off the ground' },
   { value: 1, label: 'City we are starting in' },
@@ -116,6 +130,51 @@ export default function About() {
               <h3 className="font-display uppercase text-xl text-voice-cream">{v.title}</h3>
               <p className="mt-3 text-voice-cream/70 text-sm md:text-base">{v.body}</p>
             </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Partner orgs */}
+      <section className="relative overflow-hidden bg-voice-ink py-20 md:py-28 px-6 md:px-10 border-t border-voice-gold/20">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="relative mx-auto max-w-3xl text-center mb-14"
+        >
+          <span className="font-display uppercase tracking-[0.3em] text-voice-gold text-xs">
+            Who We Work With
+          </span>
+          <h2 className="font-display uppercase text-3xl md:text-5xl text-voice-cream mt-4">
+            We didn't build this alone.
+          </h2>
+        </motion.div>
+        <div className="relative mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8">
+          {PARTNERS.map((p, i) => (
+            <motion.a
+              key={p.name}
+              href={p.url}
+              target="_blank"
+              rel="noreferrer"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              whileHover={{ y: -4, borderColor: 'var(--color-voice-gold)' }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+              className="block border border-voice-cream/15 p-8 text-center hover:bg-voice-black/40 transition-colors"
+            >
+              <h3 className="font-display uppercase text-2xl text-voice-gold">{p.name}</h3>
+              {p.fullName && (
+                <p className="mt-1 text-voice-cream/50 text-xs uppercase tracking-wide">
+                  {p.fullName}
+                </p>
+              )}
+              <p className="mt-4 text-voice-cream/70 text-sm md:text-base">{p.blurb}</p>
+              <span className="mt-5 inline-block text-voice-cream/50 text-xs uppercase tracking-wide">
+                Visit site ↗
+              </span>
+            </motion.a>
           ))}
         </div>
       </section>

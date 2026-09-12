@@ -37,7 +37,7 @@ function ContactForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const to = 'aesenthilvanan@gmail.com'
+    const to = 'voices4vegans@gmail.com'
     const subject = encodeURIComponent(`Message from ${name || 'the VOICE site'}`)
     const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`)
     window.location.href = `mailto:${to}?subject=${subject}&body=${body}`
