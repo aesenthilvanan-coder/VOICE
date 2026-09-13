@@ -1,4 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion'
+import SectionPhoto from './SectionPhoto'
 
 // Full-viewport content warning gate. Renders in-flow (not fixed) so it appears
 // naturally as the user scrolls to the graphic imagery section, then dissolves on choice.
@@ -10,9 +11,10 @@ export default function ContentWarningGate({ onView, onSkip, revealed }) {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.7 }}
-          className="relative min-h-screen w-full flex items-center justify-center bg-voice-black border-y border-voice-gold/20 px-6"
+          className="relative overflow-hidden min-h-screen w-full flex items-center justify-center bg-voice-black border-y border-voice-gold/20 px-6"
         >
-          <div className="max-w-2xl text-center">
+          <SectionPhoto src="/images/animal-goat.jpg" alt="" overlay="bg-voice-black/90" />
+          <div className="relative max-w-2xl text-center">
             <span className="inline-block font-display uppercase tracking-[0.3em] text-voice-gold text-xs mb-6">
               Content Warning
             </span>

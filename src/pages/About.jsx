@@ -3,6 +3,7 @@ import Highlight from '../components/Highlight'
 import StatCounter from '../components/StatCounter'
 import GlowOrb from '../components/GlowOrb'
 import GrowingVine from '../components/GrowingVine'
+import SectionPhoto from '../components/SectionPhoto'
 
 // Editable mission copy
 const MISSION_PARAGRAPHS = [
@@ -56,6 +57,7 @@ export default function About() {
   return (
     <div>
       <section className="relative overflow-hidden pt-40 pb-24 px-6 md:px-10 bg-voice-black">
+        <SectionPhoto src="/images/animal-turkey.jpg" alt="" overlay="bg-voice-black/80" />
         <GlowOrb color="leaf" size={440} top="-6rem" left="-8rem" duration={13} />
         <div className="relative mx-auto max-w-4xl text-center">
           <motion.span
@@ -80,6 +82,7 @@ export default function About() {
       </section>
 
       <section className="relative overflow-hidden bg-voice-black pb-20 md:pb-28 px-6 md:px-10">
+        <SectionPhoto src="/images/animal-cow.jpg" alt="" overlay="bg-voice-black/85" />
         <GrowingVine />
         <div className="relative mx-auto max-w-2xl space-y-6">
           {MISSION_PARAGRAPHS.map((p, i) => (
@@ -97,8 +100,9 @@ export default function About() {
         </div>
       </section>
 
-      <section className="bg-voice-green py-20 md:py-28 px-6 md:px-10 border-y border-voice-gold/20">
-        <div className="mx-auto max-w-5xl grid grid-cols-1 sm:grid-cols-3 gap-10">
+      <section className="relative overflow-hidden bg-voice-green py-20 md:py-28 px-6 md:px-10 border-y border-voice-gold/20">
+        <SectionPhoto src="/images/animal-sheep.jpg" alt="" overlay="bg-voice-green-dark/80" />
+        <div className="relative mx-auto max-w-5xl grid grid-cols-1 sm:grid-cols-3 gap-10">
           {ABOUT_STATS.map((s) => (
             <StatCounter key={s.label} {...s} />
           ))}
@@ -106,6 +110,7 @@ export default function About() {
       </section>
 
       <section className="relative overflow-hidden bg-voice-black py-20 md:py-28 px-6 md:px-10">
+        <SectionPhoto src="/images/animal-duck.jpg" alt="" overlay="bg-voice-black/85" />
         <GlowOrb color="gold" size={400} bottom="-6rem" right="-6rem" duration={12} delay={1.5} />
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -136,6 +141,7 @@ export default function About() {
 
       {/* Partner orgs */}
       <section className="relative overflow-hidden bg-voice-ink py-20 md:py-28 px-6 md:px-10 border-t border-voice-gold/20">
+        <SectionPhoto src="/images/animal-goat.jpg" alt="" overlay="bg-voice-black/85" />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -162,7 +168,7 @@ export default function About() {
               viewport={{ once: true, margin: '-60px' }}
               whileHover={{ y: -4, borderColor: 'var(--color-voice-gold)' }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="block border border-voice-cream/15 p-8 text-center hover:bg-voice-black/40 transition-colors"
+              className="block border border-voice-cream/15 bg-voice-black/50 p-8 text-center hover:bg-voice-black/70 transition-colors"
             >
               <h3 className="font-display uppercase text-2xl text-voice-gold">{p.name}</h3>
               {p.fullName && (
@@ -181,6 +187,7 @@ export default function About() {
 
       {/* Founders' note */}
       <section className="relative overflow-hidden bg-voice-ink py-20 md:py-28 px-6 md:px-10 border-t border-voice-gold/20">
+        <SectionPhoto src="/images/animal-calf.jpg" alt="" overlay="bg-voice-black/85" />
         <GlowOrb color="leaf" size={360} top="-4rem" left="50%" duration={11} />
         <motion.div
           initial={{ opacity: 0, y: 30 }}

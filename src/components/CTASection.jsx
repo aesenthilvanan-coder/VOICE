@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import GlowOrb from './GlowOrb'
+import SectionPhoto from './SectionPhoto'
 
 const MotionLink = motion(Link)
 
 export default function CTASection() {
   return (
     <section className="relative overflow-hidden bg-voice-green py-24 md:py-32 px-6 md:px-10 border-t border-voice-gold/20">
+      <SectionPhoto src="/images/animal-duck.jpg" alt="" overlay="bg-voice-green-dark/75" />
       <GlowOrb color="leaf" size={460} top="-8rem" left="-8rem" duration={14} />
       <GlowOrb color="gold" size={400} bottom="-8rem" right="-6rem" duration={12} delay={2} />
       <motion.div

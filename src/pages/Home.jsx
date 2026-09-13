@@ -7,6 +7,7 @@ import StatCounter from '../components/StatCounter'
 import CTASection from '../components/CTASection'
 import Highlight from '../components/Highlight'
 import NetworkField from '../components/NetworkField'
+import SectionPhoto from '../components/SectionPhoto'
 
 // Placeholder stats — swap for real figures once available
 const STATS = [
@@ -25,6 +26,7 @@ export default function Home() {
 
       {/* Intro / framing section */}
       <section className="relative overflow-hidden bg-voice-black py-20 md:py-28 px-6 md:px-10">
+        <SectionPhoto src="/images/animal-sheep.jpg" alt="" overlay="bg-voice-black/75" />
         <NetworkField className="opacity-80" />
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -4,6 +4,7 @@ import FounderCard from '../components/FounderCard'
 import ComingSoonBadge from '../components/ComingSoonBadge'
 import GlowOrb from '../components/GlowOrb'
 import DebateOrbit from '../components/DebateOrbit'
+import SectionPhoto from '../components/SectionPhoto'
 
 // Editable founder/debater data
 const FOUNDERS = [
@@ -20,13 +21,6 @@ const FOUNDERS = [
     email: 'bennettmason60@gmail.com',
     instagram: 'masonabennett35',
     photo: '/images/founder-mason.jpg',
-  },
-  {
-    name: 'Ian Aughenbaugh',
-    role: 'Debater',
-    email: 'ianaugh@icloud.com',
-    instagram: 'ianaughenbaugh13',
-    photo: '/images/founder-ian.jpg',
   },
 ]
 
@@ -95,8 +89,9 @@ function ContactForm() {
 export default function Contact() {
   return (
     <div>
-      <section className="pt-40 pb-20 px-6 md:px-10 bg-voice-black">
-        <div className="mx-auto max-w-3xl text-center">
+      <section className="relative overflow-hidden pt-40 pb-20 px-6 md:px-10 bg-voice-black">
+        <SectionPhoto src="/images/animal-pig.jpg" alt="" overlay="bg-voice-black/80" />
+        <div className="relative mx-auto max-w-3xl text-center">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -126,6 +121,7 @@ export default function Contact() {
       </section>
 
       <section className="relative overflow-hidden bg-voice-black pb-20 md:pb-28 px-6 md:px-10">
+        <SectionPhoto src="/images/animal-hen.jpg" alt="" overlay="bg-voice-black/88" />
         <DebateOrbit className="opacity-70" />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -138,11 +134,11 @@ export default function Contact() {
             The Debaters
           </span>
           <h2 className="font-display uppercase text-2xl md:text-4xl text-voice-cream">
-            Three voices, one table.
+            Two voices, one table.
           </h2>
           <ComingSoonBadge />
         </motion.div>
-        <div className="relative mx-auto max-w-5xl grid grid-cols-1 sm:grid-cols-3 gap-8">
+        <div className="relative mx-auto max-w-2xl grid grid-cols-1 sm:grid-cols-2 gap-8">
           {FOUNDERS.map((f) => (
             <FounderCard key={f.name} {...f} />
           ))}
@@ -150,6 +146,7 @@ export default function Contact() {
       </section>
 
       <section className="relative overflow-hidden bg-voice-green py-20 md:py-28 px-6 md:px-10 border-y border-voice-gold/20">
+        <SectionPhoto src="/images/animal-sheep.jpg" alt="" overlay="bg-voice-green-dark/80" />
         <GlowOrb color="gold" size={360} top="-4rem" right="10%" duration={12} />
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

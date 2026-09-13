@@ -11,7 +11,6 @@ const ORG_EMAIL = 'voices4vegans@gmail.com'
 const FOUNDER_EMAILS = [
   { name: 'Aaryan Senthilvanan', email: 'aesenthilvanan@gmail.com' },
   { name: 'Mason Bennett', email: 'bennettmason60@gmail.com' },
-  { name: 'Ian Aughenbaugh', email: 'ianaugh@icloud.com' },
 ]
 const PARTNERS = [
   { name: 'peta2', url: 'https://www.peta2.com/' },
