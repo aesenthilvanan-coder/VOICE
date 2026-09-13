@@ -2,11 +2,8 @@ import { useRef, useState } from 'react'
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import Highlight from '../components/Highlight'
-import BoothSVG from '../components/BoothSVG'
 import VideoGrid from '../components/VideoGrid'
-import PulseRings from '../components/PulseRings'
 import TypingDots from '../components/TypingDots'
-import GlowOrb from '../components/GlowOrb'
 import SectionPhoto from '../components/SectionPhoto'
 
 const MotionLink = motion(Link)
@@ -73,8 +70,7 @@ export default function WhatWeDo() {
     <div>
       {/* Intro hero */}
       <section className="relative overflow-hidden pt-40 pb-24 px-6 md:px-10 bg-voice-black">
-        <SectionPhoto src="/images/animal-goat.jpg" alt="" overlay="bg-voice-black/80" />
-        <PulseRings maxSize={640} />
+        <SectionPhoto src="/images/animal-goat.jpg" alt="" overlay="bg-voice-black/70" />
         <div className="relative mx-auto max-w-4xl text-center">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
@@ -119,16 +115,11 @@ export default function WhatWeDo() {
             Watch the video that's turned thousands vegan ↗
           </motion.a>
         </div>
-
-        <div className="relative mt-16">
-          <BoothSVG />
-        </div>
       </section>
 
       {/* Honest status section — momentum, not apology */}
       <section className="relative overflow-hidden bg-voice-green py-20 md:py-28 px-6 md:px-10 border-y border-voice-gold/20">
-        <SectionPhoto src="/images/animal-calf.jpg" alt="" overlay="bg-voice-green-dark/80" />
-        <GlowOrb color="leaf" size={400} bottom="-6rem" left="-6rem" duration={12} delay={1} />
+        <SectionPhoto src="/images/animal-calf.jpg" alt="" overlay="bg-voice-green-dark/70" />
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -184,8 +175,7 @@ export default function WhatWeDo() {
 
       {/* Instagram content arm */}
       <section className="relative overflow-hidden bg-voice-black py-20 md:py-28 px-6 md:px-10">
-        <SectionPhoto src="/images/animal-duck.jpg" alt="" overlay="bg-voice-black/80" />
-        <GlowOrb color="gold" size={380} top="-4rem" left="50%" duration={13} delay={2} />
+        <SectionPhoto src="/images/animal-duck.jpg" alt="" overlay="bg-voice-black/70" />
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

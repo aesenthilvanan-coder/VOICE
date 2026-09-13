@@ -1,7 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import ComingSoonBadge from './ComingSoonBadge'
-import GlowOrb from './GlowOrb'
 
 // EDIT HEADLINE HERE — kept as a simple constant for easy copy changes.
 const HEADLINE = 'EATING ANIMALS IS WRONG.'
@@ -29,9 +28,6 @@ export default function Hero() {
       />
       {/* Flat solid scrim, not a gradient, per brand rules */}
       <div className="absolute inset-0 bg-voice-black/55" />
-
-      <GlowOrb color="gold" size={480} top="-8rem" left="-6rem" duration={12} />
-      <GlowOrb color="leaf" size={420} bottom="-6rem" right="-4rem" duration={14} delay={2} />
 
       <motion.div
         style={{ opacity }}

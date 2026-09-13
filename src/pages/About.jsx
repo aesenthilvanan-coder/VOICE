@@ -1,8 +1,6 @@
 import { motion } from 'framer-motion'
 import Highlight from '../components/Highlight'
 import StatCounter from '../components/StatCounter'
-import GlowOrb from '../components/GlowOrb'
-import GrowingVine from '../components/GrowingVine'
 import SectionPhoto from '../components/SectionPhoto'
 
 // Editable mission copy
@@ -57,8 +55,7 @@ export default function About() {
   return (
     <div>
       <section className="relative overflow-hidden pt-40 pb-24 px-6 md:px-10 bg-voice-black">
-        <SectionPhoto src="/images/animal-turkey.jpg" alt="" overlay="bg-voice-black/80" />
-        <GlowOrb color="leaf" size={440} top="-6rem" left="-8rem" duration={13} />
+        <SectionPhoto src="/images/animal-turkey.jpg" alt="" overlay="bg-voice-black/70" />
         <div className="relative mx-auto max-w-4xl text-center">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
@@ -82,8 +79,7 @@ export default function About() {
       </section>
 
       <section className="relative overflow-hidden bg-voice-black pb-20 md:pb-28 px-6 md:px-10">
-        <SectionPhoto src="/images/animal-cow.jpg" alt="" overlay="bg-voice-black/85" />
-        <GrowingVine />
+        <SectionPhoto src="/images/animal-cow.jpg" alt="" overlay="bg-voice-black/75" />
         <div className="relative mx-auto max-w-2xl space-y-6">
           {MISSION_PARAGRAPHS.map((p, i) => (
             <motion.p
@@ -110,8 +106,7 @@ export default function About() {
       </section>
 
       <section className="relative overflow-hidden bg-voice-black py-20 md:py-28 px-6 md:px-10">
-        <SectionPhoto src="/images/animal-duck.jpg" alt="" overlay="bg-voice-black/85" />
-        <GlowOrb color="gold" size={400} bottom="-6rem" right="-6rem" duration={12} delay={1.5} />
+        <SectionPhoto src="/images/animal-duck.jpg" alt="" overlay="bg-voice-black/75" />
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -187,8 +182,7 @@ export default function About() {
 
       {/* Founders' note */}
       <section className="relative overflow-hidden bg-voice-ink py-20 md:py-28 px-6 md:px-10 border-t border-voice-gold/20">
-        <SectionPhoto src="/images/animal-calf.jpg" alt="" overlay="bg-voice-black/85" />
-        <GlowOrb color="leaf" size={360} top="-4rem" left="50%" duration={11} />
+        <SectionPhoto src="/images/animal-calf.jpg" alt="" overlay="bg-voice-black/75" />
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

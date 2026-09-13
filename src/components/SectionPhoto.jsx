@@ -1,7 +1,6 @@
 // Full-bleed background photo + dark scrim, dropped at the top of a
 // `relative overflow-hidden` section so every section carries a real image
-// instead of a flat color panel. Decorative elements (GlowOrb, line art)
-// render on top of this for texture.
+// instead of a flat color panel or decorative line-art animation.
 export default function SectionPhoto({ src, alt = '', overlay = 'bg-voice-black/70' }) {
   return (
     <>
