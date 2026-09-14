@@ -7,6 +7,7 @@ import StatCounter from '../components/StatCounter'
 import CTASection from '../components/CTASection'
 import Highlight from '../components/Highlight'
 import SectionPhoto from '../components/SectionPhoto'
+import SkipReflection from '../components/SkipReflection'
 
 // Placeholder stats — swap for real figures once available
 const STATS = [
@@ -64,17 +65,7 @@ export default function Home() {
       />
       {galleryRevealed && <Gallery />}
       {gallerySkipped && !galleryRevealed && (
-        <section className="bg-voice-black py-16 px-6 text-center">
-          <p className="text-voice-cream/50 text-sm">
-            You chose to skip this section.{' '}
-            <button
-              onClick={() => setGalleryRevealed(true)}
-              className="text-voice-gold border-b border-voice-gold/50 hover:text-voice-cream"
-            >
-              View it anyway
-            </button>
-          </p>
-        </section>
+        <SkipReflection onView={() => setGalleryRevealed(true)} />
       )}
 
       <CTASection />

@@ -5,6 +5,7 @@ import Highlight from '../components/Highlight'
 import VideoGrid from '../components/VideoGrid'
 import TypingDots from '../components/TypingDots'
 import SectionPhoto from '../components/SectionPhoto'
+import EmbeddedVideo from '../components/EmbeddedVideo'
 
 const MotionLink = motion(Link)
 
@@ -101,20 +102,38 @@ export default function WhatWeDo() {
             sides talking until someone changes their mind, or explains why they won't.
           </motion.p>
 
-          <motion.a
-            href="https://3minutes.wtf/"
-            target="_blank"
-            rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.96 }}
-            transition={{ duration: 0.6, delay: 0.35 }}
-            className="inline-block mt-8 px-8 py-3 border border-voice-gold text-voice-gold font-display uppercase tracking-wide text-sm hover:bg-voice-gold hover:text-voice-black transition-colors"
-          >
-            Watch the video that's turned thousands vegan ↗
-          </motion.a>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.35 }}
+          className="relative mx-auto max-w-2xl mt-12"
+        >
+          <EmbeddedVideo youtubeId="LpDJlEQsDoA" title="Dominion (2018) — official trailer" />
+          <p className="mt-4 text-voice-cream/50 text-xs uppercase tracking-wide">
+            Dominion (2018) — trailer for the documentary that's turned thousands vegan.
+            Contains real footage from animal agriculture.
+          </p>
+          <div className="mt-2 flex flex-wrap items-center gap-x-6 gap-y-1">
+            <a
+              href="https://www.youtube.com/watch?v=LQRAfJyEsko"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block text-voice-gold text-xs uppercase tracking-wide underline decoration-voice-gold/40 underline-offset-2 hover:decoration-voice-gold"
+            >
+              Watch the full documentary ↗
+            </a>
+            <a
+              href="https://3minutes.wtf/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block text-voice-gold text-xs uppercase tracking-wide underline decoration-voice-gold/40 underline-offset-2 hover:decoration-voice-gold"
+            >
+              Or take the 3-minute challenge in person ↗
+            </a>
+          </div>
+        </motion.div>
       </section>
 
       {/* Honest status section — momentum, not apology */}
