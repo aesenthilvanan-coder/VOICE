@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import Highlight from '../components/Highlight'
 import VideoGrid from '../components/VideoGrid'
 import TypingDots from '../components/TypingDots'
-import SectionPhoto from '../components/SectionPhoto'
+import PhotoBand from '../components/PhotoBand'
 import EmbeddedVideo from '../components/EmbeddedVideo'
 
 const MotionLink = motion(Link)
@@ -70,81 +70,82 @@ export default function WhatWeDo() {
   return (
     <div>
       {/* Intro hero */}
-      <section className="relative overflow-hidden pt-40 pb-24 px-6 md:px-10 bg-voice-black">
-        <SectionPhoto src="/images/animal-goat.jpg" alt="" overlay="bg-voice-black/70" />
-        <div className="relative mx-auto max-w-4xl text-center">
-          <motion.span
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="font-display uppercase tracking-[0.3em] text-voice-gold text-xs"
-          >
-            What We Do
-          </motion.span>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-display uppercase text-4xl md:text-7xl text-voice-cream mt-4 leading-[0.95]"
-          >
-            We set up a table.
-            <br />
-            We ask a <Highlight className="text-voice-gold">hard question.</Highlight>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.25 }}
-            className="mt-8 text-voice-cream/70 text-base md:text-lg max-w-2xl mx-auto"
-          >
-            Our format is simple: a public booth, a provocative prompt, and an open
-            conversation with anyone who walks by. No debate team, no gotchas — just two
-            sides talking until someone changes their mind, or explains why they won't.
-          </motion.p>
-
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.35 }}
-          className="relative mx-auto max-w-2xl mt-12"
-        >
-          <EmbeddedVideo youtubeId="LpDJlEQsDoA" title="Dominion (2018) — official trailer" />
-          <p className="mt-4 text-voice-cream/50 text-xs uppercase tracking-wide">
-            Dominion (2018) — trailer for the documentary that's turned thousands vegan.
-            Contains real footage from animal agriculture.
-          </p>
-          <div className="mt-2 flex flex-wrap items-center gap-x-6 gap-y-1">
-            <a
-              href="https://www.youtube.com/watch?v=LQRAfJyEsko"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block text-voice-gold text-xs uppercase tracking-wide underline decoration-voice-gold/40 underline-offset-2 hover:decoration-voice-gold"
+      <section className="relative overflow-hidden bg-voice-black">
+        <PhotoBand src="/images/animal-goat.jpg" />
+        <div className="pt-16 pb-24 px-6 md:px-10">
+          <div className="relative mx-auto max-w-4xl text-center">
+            <motion.span
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="font-display uppercase tracking-[0.3em] text-voice-gold text-xs"
             >
-              Watch the full documentary ↗
-            </a>
-            <a
-              href="https://3minutes.wtf/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block text-voice-gold text-xs uppercase tracking-wide underline decoration-voice-gold/40 underline-offset-2 hover:decoration-voice-gold"
+              What We Do
+            </motion.span>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="font-display uppercase text-4xl md:text-7xl text-voice-cream mt-4 leading-[0.95]"
             >
-              Or take the 3-minute challenge in person ↗
-            </a>
+              We set up a table.
+              <br />
+              We ask a <Highlight className="text-voice-gold">hard question.</Highlight>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.25 }}
+              className="mt-8 text-voice-cream/70 text-base md:text-lg max-w-2xl mx-auto"
+            >
+              Our format is simple: a public booth, a provocative prompt, and an open
+              conversation with anyone who walks by. No debate team, no gotchas — just two
+              sides talking until someone changes their mind, or explains why they won't.
+            </motion.p>
           </div>
-        </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.35 }}
+            className="relative mx-auto max-w-2xl mt-12"
+          >
+            <EmbeddedVideo youtubeId="LpDJlEQsDoA" title="Dominion (2018) — official trailer" />
+            <p className="mt-4 text-voice-cream/50 text-xs uppercase tracking-wide">
+              Dominion (2018) — trailer for the documentary that's turned thousands vegan.
+              Contains real footage from animal agriculture.
+            </p>
+            <div className="mt-2 flex flex-wrap items-center gap-x-6 gap-y-1">
+              <a
+                href="https://www.youtube.com/watch?v=LQRAfJyEsko"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block text-voice-gold text-xs uppercase tracking-wide underline decoration-voice-gold/40 underline-offset-2 hover:decoration-voice-gold"
+              >
+                Watch the full documentary ↗
+              </a>
+              <a
+                href="https://3minutes.wtf/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block text-voice-gold text-xs uppercase tracking-wide underline decoration-voice-gold/40 underline-offset-2 hover:decoration-voice-gold"
+              >
+                Or take the 3-minute challenge in person ↗
+              </a>
+            </div>
+          </motion.div>
+        </div>
       </section>
 
       {/* Honest status section — momentum, not apology */}
-      <section className="relative overflow-hidden bg-voice-green py-20 md:py-28 px-6 md:px-10 border-y border-voice-gold/20">
-        <SectionPhoto src="/images/animal-calf.jpg" alt="" overlay="bg-voice-green-dark/70" />
+      <section className="relative overflow-hidden bg-voice-green border-y border-voice-gold/20">
+        <PhotoBand src="/images/animal-calf.jpg" overlay="bg-voice-green-dark/30" />
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="relative mx-auto max-w-3xl text-center"
+          className="relative mx-auto max-w-3xl text-center py-16 md:py-20 px-6 md:px-10"
         >
           <span className="font-display uppercase tracking-[0.3em] text-voice-gold text-xs">
             Right Now
@@ -193,30 +194,32 @@ export default function WhatWeDo() {
       <PinnedReveal />
 
       {/* Instagram content arm */}
-      <section className="relative overflow-hidden bg-voice-black py-20 md:py-28 px-6 md:px-10">
-        <SectionPhoto src="/images/animal-duck.jpg" alt="" overlay="bg-voice-black/70" />
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="relative mx-auto max-w-3xl text-center mb-14"
-        >
-          <span className="font-display uppercase tracking-[0.3em] text-voice-gold text-xs">
-            On Camera
-          </span>
-          <h2 className="font-display uppercase text-3xl md:text-5xl text-voice-cream mt-4">
-            The booth doesn't end at the table.
-          </h2>
-          <p className="mt-6 text-voice-cream/70 text-base md:text-lg">
-            We're building out a short-form content arm — clips from real conversations,
-            skits, and street interviews — to carry the same questions further than any
-            single booth can reach.
-          </p>
-        </motion.div>
+      <section className="relative overflow-hidden bg-voice-black">
+        <PhotoBand src="/images/animal-duck.jpg" />
+        <div className="py-16 md:py-24 px-6 md:px-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="relative mx-auto max-w-3xl text-center mb-14"
+          >
+            <span className="font-display uppercase tracking-[0.3em] text-voice-gold text-xs">
+              On Camera
+            </span>
+            <h2 className="font-display uppercase text-3xl md:text-5xl text-voice-cream mt-4">
+              The booth doesn't end at the table.
+            </h2>
+            <p className="mt-6 text-voice-cream/70 text-base md:text-lg">
+              We're building out a short-form content arm — clips from real conversations,
+              skits, and street interviews — to carry the same questions further than any
+              single booth can reach.
+            </p>
+          </motion.div>
 
-        <div className="relative mx-auto max-w-4xl">
-          <VideoGrid />
+          <div className="relative mx-auto max-w-4xl">
+            <VideoGrid />
+          </div>
         </div>
       </section>
     </div>

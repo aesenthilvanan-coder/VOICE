@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import FounderCard from '../components/FounderCard'
 import ComingSoonBadge from '../components/ComingSoonBadge'
-import SectionPhoto from '../components/SectionPhoto'
+import PhotoBand from '../components/PhotoBand'
 
 // Editable founder/debater data
 const FOUNDERS = [
@@ -87,74 +87,80 @@ function ContactForm() {
 export default function Contact() {
   return (
     <div>
-      <section className="relative overflow-hidden pt-40 pb-20 px-6 md:px-10 bg-voice-black">
-        <SectionPhoto src="/images/animal-pig.jpg" alt="" overlay="bg-voice-black/70" />
-        <div className="relative mx-auto max-w-3xl text-center">
-          <motion.span
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="font-display uppercase tracking-[0.3em] text-voice-gold text-xs"
-          >
-            Contact
-          </motion.span>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-display uppercase text-4xl md:text-6xl text-voice-cream mt-4"
-          >
-            Talk to us directly.
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-6 text-voice-cream/70 text-base md:text-lg"
-          >
-            Want to host or help set up a debate booth in your city, school, or venue?
-            That's exactly what we're looking for right now — reach out below.
-          </motion.p>
+      <section className="relative overflow-hidden bg-voice-black">
+        <PhotoBand src="/images/animal-pig.jpg" />
+        <div className="pt-16 pb-20 px-6 md:px-10">
+          <div className="relative mx-auto max-w-3xl text-center">
+            <motion.span
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="font-display uppercase tracking-[0.3em] text-voice-gold text-xs"
+            >
+              Contact
+            </motion.span>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="font-display uppercase text-4xl md:text-6xl text-voice-cream mt-4"
+            >
+              Talk to us directly.
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mt-6 text-voice-cream/70 text-base md:text-lg"
+            >
+              Want to host or help set up a debate booth in your city, school, or venue?
+              That's exactly what we're looking for right now — reach out below.
+            </motion.p>
+          </div>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-voice-black pb-20 md:pb-28 px-6 md:px-10">
-        <SectionPhoto src="/images/animal-hen.jpg" alt="" overlay="bg-voice-black/75" />
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="relative mx-auto max-w-5xl text-center mb-12 flex flex-col items-center gap-4"
-        >
-          <span className="font-display uppercase tracking-[0.3em] text-voice-gold text-xs">
-            The Debaters
-          </span>
-          <h2 className="font-display uppercase text-2xl md:text-4xl text-voice-cream">
-            Two voices, one table.
-          </h2>
-          <ComingSoonBadge />
-        </motion.div>
-        <div className="relative mx-auto max-w-2xl grid grid-cols-1 sm:grid-cols-2 gap-8">
-          {FOUNDERS.map((f) => (
-            <FounderCard key={f.name} {...f} />
-          ))}
+      <section className="relative overflow-hidden bg-voice-black">
+        <PhotoBand src="/images/animal-hen.jpg" />
+        <div className="pb-20 md:pb-28 px-6 md:px-10 pt-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative mx-auto max-w-5xl text-center mb-12 flex flex-col items-center gap-4"
+          >
+            <span className="font-display uppercase tracking-[0.3em] text-voice-gold text-xs">
+              The Debaters
+            </span>
+            <h2 className="font-display uppercase text-2xl md:text-4xl text-voice-cream">
+              Two voices, one table.
+            </h2>
+            <ComingSoonBadge />
+          </motion.div>
+          <div className="relative mx-auto max-w-2xl grid grid-cols-1 sm:grid-cols-2 gap-8">
+            {FOUNDERS.map((f) => (
+              <FounderCard key={f.name} {...f} />
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-voice-green py-20 md:py-28 px-6 md:px-10 border-y border-voice-gold/20">
-        <SectionPhoto src="/images/animal-sheep.jpg" alt="" overlay="bg-voice-green-dark/70" />
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="relative font-display uppercase text-2xl md:text-4xl text-voice-cream text-center mb-10"
-        >
-          Or send a message directly
-        </motion.h2>
-        <div className="relative">
-          <ContactForm />
+      <section className="relative overflow-hidden bg-voice-green border-y border-voice-gold/20">
+        <PhotoBand src="/images/animal-sheep.jpg" overlay="bg-voice-green-dark/30" />
+        <div className="py-16 md:py-20 px-6 md:px-10">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative font-display uppercase text-2xl md:text-4xl text-voice-cream text-center mb-10"
+          >
+            Or send a message directly
+          </motion.h2>
+          <div className="relative">
+            <ContactForm />
+          </div>
         </div>
       </section>
     </div>
